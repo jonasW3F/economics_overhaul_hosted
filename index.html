@@ -581,7 +581,7 @@ Economic Resilience</h1>
 </div>
 
 
-<pre><code>## ℹ 2025-08-20 13:15:52.793731 &gt; Setting client.id from options(googleAuthR.client_id)</code></pre>
+<pre><code>## ℹ 2025-08-20 17:56:14.342381 &gt; Setting client.id from options(googleAuthR.client_id)</code></pre>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p><strong>Disclaimer:</strong> This text was written with minimal use
@@ -968,26 +968,26 @@ are still employed by the network to filter through validators, assess
 their reliability and quality, and submit their nominations to the
 election algorithm.</p>
 </div>
-<div id="policy-4-halving-schedule" class="section level3">
-<h3>Policy 4: Halving Schedule</h3>
-<p>If we implement a halving schedule, depending on the configuration of
-the total issuance, the system converges towards an upper cap. In the
-absence of any dynamic minting procedure (incorporating the distance to
-the cap, influenced by token burns), we end up at some endogenously
-defined upper cap. If we want to implement specific caps (e.g.,
-<strong>π-billion DOT</strong> or <strong>e-billion DOT</strong>
-(Euler’s number), we need to specify dynamic minting functions that make
-the issuance dynamic to fit to the expected issuance schedule. It needs
-to be dynamic, because we burn token of an unpredictable amount. In
-general, the minting rate in any period is a function of the remaining
-distance to the cap, typically decreasing over time as the cap is
-approached. This has a useful side effect: when DOT are burned, for
-example through coretime purchases or transaction fee burns, the total
-supply decreases. That, in turn, widens the gap to the cap, and
-therefore slightly increases the allowable minting rate in subsequent
-periods. <strong>More details on these considerations are outside the
-scope of this report and should be properly designed by proposers of new
-models</strong>.</p>
+<div id="policy-4-reduction-schedule" class="section level3">
+<h3>Policy 4: Reduction Schedule</h3>
+<p>If we implement a continous reduction schedule, depending on the
+configuration of the total issuance, the system converges towards an
+upper cap. In the absence of any dynamic minting procedure
+(incorporating the distance to the cap, influenced by token burns), we
+end up at some endogenously defined upper cap. If we want to implement
+specific caps (e.g., <strong>π-billion DOT</strong> or <strong>e-billion
+DOT</strong> (Euler’s number), we need to specify dynamic minting
+functions that make the issuance dynamic to fit to the expected issuance
+schedule. It needs to be dynamic, because we burn token of an
+unpredictable amount. In general, the minting rate in any period is a
+function of the remaining distance to the cap, typically decreasing over
+time as the cap is approached. This has a useful side effect: when DOT
+are burned, for example through coretime purchases or transaction fee
+burns, the total supply decreases. That, in turn, widens the gap to the
+cap, and therefore slightly increases the allowable minting rate in
+subsequent periods. <strong>More details on these considerations are
+outside the scope of this report and should be properly designed by
+proposers of new models</strong>.</p>
 </div>
 <div id="models" class="section level2">
 <h2>Models</h2>
