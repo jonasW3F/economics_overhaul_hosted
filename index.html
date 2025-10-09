@@ -582,7 +582,7 @@ Economic Resilience</h1>
 </div>
 
 
-<pre><code>## ℹ 2025-10-08 15:57:50.762867 &gt; Setting client.id from options(googleAuthR.client_id)</code></pre>
+<pre><code>## ℹ 2025-10-09 16:10:29.48066 &gt; Setting client.id from options(googleAuthR.client_id)</code></pre>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p><strong>Disclaimer:</strong> This text was written with minimal use
@@ -677,7 +677,7 @@ maliciously (and are caught by honest nodes), they and all their
 nominators are slashed.</p>
 <p>When we analyze the economic security, it is crucial to first get an
 idea about what (economic) attacks are possible. Here we assume, that an
-attacker wants to obtain and coordinate 1/3+1 of the nodes (to break
+attacker wants to obtain and coordinate 1/3N+1 of the nodes (to break
 Byzantine Fault Tolerance) to halt finality, a detrimental situation for
 any PoS-system. Which stake is relevant depends on the way the malicious
 actor coordinates the attack. In Scenario A, we assume that it is an
@@ -733,7 +733,7 @@ year. In our case, we can use the staking APY.</li>
 <p>Let’s state some additional underlying assumptions. We assume
 that…</p>
 <ul>
-<li>… the attacker aims to obtain 1/3+1 of all active validators.</li>
+<li>… the attacker aims to obtain 1/3N+1 of all active validators.</li>
 <li>… a successful attack on consensus would lead to a halt of finality
 and result in a catastrophic market reaction (value -&gt; 0). Validators
 would never have the ability to validate again, lose all their stake and
@@ -800,7 +800,7 @@ definitively negatively impact the market.</li>
 sovereign assets (such as stable coins or assets not related to the
 Polkadot ecosystem), <strong>if</strong> the malicious entity can
 finalize malicious state transitions (i.e., obtains control of more than
-1/3+1).</li>
+1/3N+1).</li>
 </ul>
 </div>
 <div id="key-metric-lower-bound" class="section level3">
@@ -818,34 +818,34 @@ of the bounty after proving to be part of the attack.</p>
 situation turns into a coordination game with two (Nash) Equilibria:
 either everyone stays honest (i.e., the bounty is not high enough), or
 all defect. The reason is that it has very little value to remain
-honest, if 1/3+1 of other validators defect, because consensus would
+honest, if 1/3N+1 of other validators defect, because consensus would
 fail and all value would be wiped. Importantly, without going into too
 much detail, the concept of a NE does not offer a reliable way to
 identify which strategies are actually being played by the actors
 (particularly if there are multiple equilibria). We could be more
 sophisticated and extend the analysis by modelling beliefs (and beliefs
 about beliefs) but this is mostly driven by the assumptions we employ.
-The important take-away is that if at least 1/3+1 of validators could
-reasonably assume that 1/3+1 will defect, and this becomes economical
+The important take-away is that if at least 1/3N+1 of validators could
+reasonably assume that 1/3N+1 will defect, and this becomes economical
 once the bounty is equal to the lower bound amount, the situation is
 critical. In that case, it is better to participate in the attack (even
 for a tiny payoff). In other words, offering the minimum amount to bribe
-1/3+1 might, depending on the believes of the validators, turn all
+1/3N+1 might, depending on the believes of the validators, turn all
 validators to defect.</p>
 <p>There are a few additional and dangerous implications:</p>
 <ol style="list-style-type: decimal">
 <li>This attack could entirely be coordinated publicly. There’s no need
 for hidden communication. The bounty could publicly be announced and
 validators individually make their choice (but will probably heavily try
-to find out whether a necessary 1/3+1 will be found).</li>
+to find out whether a necessary 1/3N+1 will be found).</li>
 <li>It might be possible to structure the claim of the reward
 trustlessly through some pre-funded smart contract that accepts a
 cryptographic proof of participation in the attack.</li>
 <li>All announcements before the attack date from validators must be
 considered cheap talk, especially if they announce to not participate in
-the attack. Further, the fact that potentially more than 1/3+1 of
+the attack. Further, the fact that potentially more than 1/3N+1 of
 validators will defect could dangerously dilute individual
-responsibilities (“We knew that without us more than 1/3+1 of other
+responsibilities (“We knew that without us more than 1/3N+1 of other
 validators will defect, so the only reason we also defected was to get
 at least some payout”).</li>
 <li>The public bounty could be configured to start at the lower bound
@@ -1238,7 +1238,7 @@ and how to quantify it. As an important factor, the resilience both
 depends on the DOT at stake (and for the “worst-case” lower bound, the
 self-stake of validators) and the expected (discounted) future rewards
 that stem from issuance. We’ve seen that especially Polkadot draws the
-economic resilience for the 1/3+1 validators at the lower bound mostly
+economic resilience for the 1/3N+1 validators at the lower bound mostly
 from issuance. That means, cutting issuance significantly almost
 proportionally translates into lowering that bound. If the community
 votes to go that path, we’ve proposed additional policies that can make
